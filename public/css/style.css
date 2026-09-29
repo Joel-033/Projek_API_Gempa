@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: #f4f7f6; 
+    margin: 0; 
+    padding: 30px 20px; 
+    color: #333;
+}
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+/* Menu Navigasi */
+.navbar {
+    background: #2c3e50;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.navbar a {
+    color: white; text-decoration: none; font-weight: 600; 
+    padding: 10px 20px; border-radius: 5px; 
+    background: rgba(255,255,255,0.1); transition: 0.3s;
+}
+.navbar a:hover, .navbar a.active { background: #e74c3c; }
+
+/* Tombol Tarik Data */
+.action-box {
+    background: #fff; padding: 20px; border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px;
+    text-align: center; border: 2px dashed #bdc3c7;
+}
+.btn-fetch {
+    background: #27ae60; color: white; border: none;
+    padding: 12px 25px; border-radius: 6px; font-size: 16px;
+    cursor: pointer; font-weight: bold; transition: 0.3s;
+}
+.btn-fetch:hover { background: #2ecc71; }
+.help-text { font-size: 13px; color: #7f8c8d; margin-top: 10px; display: block; }
+
+/* Grid & Cards */
+.grid-container {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;
+}
+.card {
+    background: #fff; border-radius: 10px; padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.card-terkini { max-width: 500px; margin: 0 auto; border-top: 5px solid #e74c3c; }
+.card-mini { border-top: 4px solid #3498db; }
+.card-history { border-top: 4px solid #f39c12; }
+
+/* Info Text */
+.info-group { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed #e0e0e0; }
+.info-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.info-label { font-size: 11px; color: #7f8c8d; text-transform: uppercase; margin-bottom: 4px; }
+.info-value { font-size: 15px; color: #2c3e50; font-weight: 600; }
+.magnitude { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+.error-box { background: #ffcccc; color: #c0392b; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-weight: bold; text-align: center; }
+
+/* Form History */
+.history-form { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center; }
+.history-form input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
