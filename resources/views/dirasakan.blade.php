@@ -19,7 +19,7 @@
         <div class="action-box">
             <form action="/dirasakan" method="GET">
                 <button type="submit" name="tarik_data" value="1" class="btn-fetch">Tarik Data Dirasakan</button>
-                <span class="help-text">Klik tombol di atas untuk menarik data dari API (-2 Kredit)</span>
+                <span class="help-text">Klik tombol di atas untuk menarik data dari API</span>
             </form>
         </div>
 
@@ -33,24 +33,24 @@
                 <div class="card card-mini" style="border-top-color: #3498db;">
                     <div class="info-group">
                         <div class="info-label">Waktu</div>
-                        <!-- Diubah ke 'datetime' -->
-                        <div class="info-value">{{ $gempa['datetime'] ?? '-' }}</div>
+
+                        <div class="info-value">{{ isset($gempa['datetime']) ? \Carbon\Carbon::parse($gempa['datetime'])->timezone('Asia/Jakarta')->locale('id')->translatedFormat('l, d F Y | H:i') . ' WIB' : '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Kekuatan & Kedalaman</div>
-                        <!-- Diubah ke 'magnitude' dan 'depth_km' -->
+
                         <div class="info-value">
                             <span class="magnitude">{{ $gempa['magnitude'] ?? '-' }}</span> | Kedalaman: {{ $gempa['depth_km'] ?? '-' }} km
                         </div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Pusat Gempa</div>
-                        <!-- Diubah ke 'region' -->
+
                         <div class="info-value">{{ $gempa['region'] ?? '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Dirasakan (Skala MMI)</div>
-                        <!-- Diubah ke 'felt_areas' sesuai hasil dd() -->
+
                         <div class="info-value" style="color:#d35400;">{{ $gempa['felt_areas'] ?? '-' }}</div>
                     </div>
                 </div>

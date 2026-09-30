@@ -30,7 +30,7 @@
                     <button type="submit" name="tarik_data" value="1" class="btn-fetch">Cari & Tarik Riwayat</button>
                 </div>
             </form>
-            <span class="help-text" style="margin-top: 15px;">Pilih tanggal, lalu klik tombol untuk menarik data dari API (-2 Kredit)</span>
+            <span class="help-text" style="margin-top: 15px;">Pilih tanggal, lalu klik tombol untuk menarik data dari API </span>
         </div>
 
         @if(isset($error))
@@ -43,24 +43,24 @@
                 <div class="card card-history" style="border-top-color: #f39c12;">
                     <div class="info-group">
                         <div class="info-label">Waktu</div>
-                        <!-- Key: datetime -->
-                        <div class="info-value">{{ $riwayat['datetime'] ?? '-' }}</div>
+
+                        <div class="info-value">{{ isset($riwayat['datetime']) ? \Carbon\Carbon::parse($riwayat['datetime'])->timezone('Asia/Jakarta')->locale('id')->translatedFormat('l, d F Y | H:i') . ' WIB' : '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Kekuatan & Kedalaman</div>
-                        <!-- Key: magnitude & depth_km -->
+
                         <div class="info-value">
                             <span class="magnitude">{{ $riwayat['magnitude'] ?? '-' }}</span> | Kedalaman: {{ $riwayat['depth_km'] ?? '-' }} km
                         </div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Pusat Gempa</div>
-                        <!-- Key: region -->
+
                         <div class="info-value">{{ $riwayat['region'] ?? '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Potensi</div>
-                        <!-- Key: potential -->
+
                         <div class="info-value" style="color: #d35400;">{{ $riwayat['potential'] ?? '-' }}</div>
                     </div>
                 </div>

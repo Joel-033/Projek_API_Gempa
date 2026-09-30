@@ -19,7 +19,7 @@
         <div class="action-box">
             <form action="/" method="GET">
                 <button type="submit" name="tarik_data" value="1" class="btn-fetch">Tarik Data Sekarang</button>
-                <span class="help-text">Klik tombol di atas untuk menarik data dari API (-2 Kredit)</span>
+                <span class="help-text">Klik tombol di atas untuk menarik data dari API</span>
             </form>
         </div>
 
@@ -29,29 +29,24 @@
 
         @if(request()->has('tarik_data') && !isset($error))
             <div class="grid-container">
-                {{-- Karena datanya banyak (array), kita gunakan perulangan --}}
                 @forelse($gempa as $g)
                 <div class="card card-mini" style="border-top-color: #e74c3c;">
                     <div class="info-group">
                         <div class="info-label">Waktu</div>
-                        {{-- Menggunakan key 'datetime' dari hasil dd() --}}
-                        <div class="info-value">{{ $g['datetime'] ?? '-' }}</div>
+                        <div class="info-value">{{ isset($g['datetime']) ? \Carbon\Carbon::parse($g['datetime'])->timezone('Asia/Jakarta')->locale('id')->translatedFormat('l, d F Y | H:i') . ' WIB' : '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Kekuatan & Kedalaman</div>
                         <div class="info-value">
-                            {{-- Menggunakan key 'magnitude' dan 'depth_km' dari hasil dd() --}}
-                            <span class="magnitude">{{ $g['magnitude'] ?? '-' }}</span> | Kedalaman: {{ $g['depth_km'] ?? '-' }} km
+                        <span class="magnitude">{{ $g['magnitude'] ?? '-' }}</span> | Kedalaman: {{ $g['depth_km'] ?? '-' }} km
                         </div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Lokasi / Pusat Gempa</div>
-                        {{-- Menggunakan key 'region' dari hasil dd() --}}
                         <div class="info-value">{{ $g['region'] ?? '-' }}</div>
                     </div>
                     <div class="info-group">
                         <div class="info-label">Potensi / Keterangan</div>
-                        {{-- Menggunakan key 'potential' dari hasil dd() --}}
                         <div class="info-value" style="color: #d35400;">{{ $g['potential'] ?? '-' }}</div>
                     </div>
                 </div>

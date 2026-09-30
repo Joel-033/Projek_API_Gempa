@@ -24,7 +24,6 @@ class GempaController extends Controller
         $gempa = null;
         $error = null;
 
-        // JIKA tombol "Tarik Data" diklik
         if ($request->has('tarik_data')) {
             $response = Http::withHeaders($this->headers)->get($this->baseUrl . '/terkini');
             if ($response->successful()) {

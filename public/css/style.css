@@ -54,13 +54,51 @@ body {
 .card-history { border-top: 4px solid #f39c12; }
 
 /* Info Text */
-.info-group { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed #e0e0e0; }
-.info-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.info-label { font-size: 11px; color: #7f8c8d; text-transform: uppercase; margin-bottom: 4px; }
-.info-value { font-size: 15px; color: #2c3e50; font-weight: 600; }
-.magnitude { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
-.error-box { background: #ffcccc; color: #c0392b; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-weight: bold; text-align: center; }
+.info-group { 
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #e0e0e0; 
+}
+.info-group:last-child { 
+                        border-bottom: none;
+                        margin-bottom: 0;
+                        padding-bottom: 0; 
+}
+.info-label { 
+            font-size: 11px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-bottom: 4px; 
+}
+.info-value { 
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 600; 
+}
+.magnitude { 
+            background: #e74c3c;
+            color: white;
+            padding: 3px 8px; border-radius: 4px; font-weight: bold;
+ }
+.error-box { 
+            background: #ffcccc;
+            color: #c0392b;
+            padding: 15px; border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+ }
 
 /* Form History */
-.history-form { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center; }
-.history-form input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.history-form {
+                display: flex;
+                justify-content:
+                center; gap: 15px;
+                flex-wrap: wrap;
+                align-items: center;
+ }
+.history-form input { 
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px; 
+}
